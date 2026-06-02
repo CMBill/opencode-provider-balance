@@ -40,24 +40,11 @@ opencode-provider-balance@latest
 
 安装后重启 OpenCode，侧边栏即可看到余额面板：
 
-```
-▶ DeepSeek 余额     ¥110.00
-```
+![Screenshot1](https://raw.githubusercontent.com/CMBill/opencode-provider-balance/master/assets/image1.png)
 
 点击展开：
 
-```
-▼ DeepSeek 余额
-────────────────────
-  ✅ 可用       CNY
-  ────────────────────
-  ¥110.00        总余额
-  ────────────────────
-  ¥10.00      赠金余额
-  ¥100.00     充值余额
-  ────────────────────
-  上次更新: 16:53:22
-```
+![Screenshot2](https://raw.githubusercontent.com/CMBill/opencode-provider-balance/master/assets/image2.png)
 
 ### 斜杠命令
 
