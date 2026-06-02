@@ -12,6 +12,7 @@ import type {
 import { createMemo, createSignal, createEffect, onMount, onCleanup, Show } from "solid-js"
 import { readFileSync, existsSync } from "node:fs"
 import { join } from "node:path"
+import { homedir } from "node:os"
 
 // ---------------------------------------------------------------------------
 // Types
@@ -53,7 +54,7 @@ declare const process: { env: Record<string, string | undefined> } | undefined
 
 function readApiKeyFromAuthStore(): string | null {
   try {
-    const home = process?.env?.HOME ?? ""
+    const home = homedir()
     if (!home) return null
     const authPath = join(home, ".local", "share", "opencode", "auth.json")
     if (!existsSync(authPath)) return null
