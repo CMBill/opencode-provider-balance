@@ -226,7 +226,7 @@ function BalancePanel(props: {
   signals: PanelSignals
 }): JSX.Element {
   const [panelWidth, setPanelWidth] = createSignal(DEFAULT_PANEL_WIDTH)
-  const [open, setOpen] = createSignal(true)
+  const [open, setOpen] = createSignal(false)
   const [data, setData] = createSignal<BalanceData>({
     isLoading: true,
     error: null,
@@ -378,11 +378,11 @@ function BalancePanel(props: {
       <text onMouseUp={() => setOpen((o) => !o)}>
         <span style={{ fg: pal().muted }}>{open() ? "\u25bc " : "\u25b6 "}</span>
         <span style={{ fg: pal().primary }}>
-          <b>DeepSeek \u4f59\u989d</b>
+          <b>DeepSeek 余额</b>
         </span>
         <Show when={!open() && !data().isLoading && !data().error && !data().noKey && data().totalBalance}>
           <span>
-            {" ".repeat(Math.max(1, panelWidth() - gutter - 2 - visualWidth("DeepSeek \u4f59\u989d") - visualWidth(currencySymbol() + data().totalBalance)))}
+            {" ".repeat(Math.max(1, panelWidth() - gutter - 2 - visualWidth("DeepSeek 余额") - visualWidth(currencySymbol() + data().totalBalance)))}
           </span>
           <span style={{ fg: pal().success }}>{currencySymbol()}{data().totalBalance}</span>
         </Show>
